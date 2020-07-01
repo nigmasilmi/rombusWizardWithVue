@@ -1,0 +1,73 @@
+[
+    {   "id": 1,
+        "name":"Desarrollo de Negocio Digital",
+         "subcategories":["Marca Líder", "Empresa Grande", "PyME", "Micro Empresa / Emprendimiento", "Institución / ONG"]
+    },
+    {   
+        "id": 2,
+        "name":"Marca e Imagen Corporativa / Branding",
+         "subcategories":"null"
+    },
+    {
+        "id": 3,
+        "name":"Estrategia de Contenidos y Comunicación",
+         "subcategories":"null"
+    },
+    {
+        "id": 4,
+        "name":"Marketing de Social Media",
+         "subcategories":"null"
+    },
+    {
+        "id": 5,
+        "name":"Reputación on line",
+         "subcategories":"null"
+    },
+    {
+        "id": 6,
+        "name":"Estrategia de Crecimiento (Growth Hacking)",
+         "subcategories":"null"
+    },
+    {
+        "id": 7,
+        "name":"Estrategia de Experiencia de Consumidor",
+         "subcategories":"null"
+    },
+    {
+        "id": 8,
+        "name":"Generación de Prospectos (Leads)",
+         "subcategories":"null"
+    },
+    {
+        "id": 9,
+        "name":"Gestión de Campaña Digital",
+         "subcategories":"null"
+    },{
+        "id": 10,
+        "name":"Optimización en Buscadores (SEO)",
+         "subcategories":"null"
+    },{
+        "id": 11,
+        "name":"Marketing en Buscadores (SEM)",
+         "subcategories":"null"
+    },{
+        "id": 12,
+        "name":"Estrategia de Ventas on line",
+         "subcategories":"null"
+    },
+    {
+        "id": 13,
+        "name":"Relaciones Públicas",
+         "subcategories":"null"
+    },
+    {   
+        "id": 14,
+        "name":"Marketing de Influencers",
+         "subcategories":"null"
+    },
+    {   
+        "id": 15,
+        "name":"Investigación y Análisis de Mercado",
+         "subcategories":"null"
+    }
+]

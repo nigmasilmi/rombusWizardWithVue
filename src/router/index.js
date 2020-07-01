@@ -1,6 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Blog from "../views/Blog.vue";
+import Soluciones from "../views/Soluciones.vue";
+import Staff from "../views/Staff.vue";
+import Wizard from "../views/Wizard.vue";
+import AdminPanel from "../views/Admin.vue";
+import Proyectos from "../views/ProyectosListing.vue";
 
 Vue.use(VueRouter);
 
@@ -11,13 +17,38 @@ const routes = [
     component: Home
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "/blog",
+    name: "Blog",
+    component: Blog
+  },
+  {
+    path: "/soluciones",
+    name: "Soluciones",
+    component: Soluciones
+  },
+  {
+    path: "/staff",
+    name: "Staff",
+    component: Staff
+  },
+  {
+    path: "/wizard",
+    name: "Wizard",
+    component: Wizard
+  },
+  {
+    path: "/admin",
+    name: "AdminPanel",
+    component: AdminPanel
+  },
+  {
+    path: "/proyectos",
+    name: "Proyectos",
+    component: Proyectos
+  },
+  {
+    path: "*",
+    redirect: "/"
   }
 ];
 
