@@ -95,7 +95,7 @@ export default {
     },
     selectThisOne: function() {
       this.notSelectedYet = false;
-        this.holdTheDoor = false;
+      this.holdTheDoor = false;
       setTimeout(() => (this.notSelectedYet = true), 3000);
     }
   }
