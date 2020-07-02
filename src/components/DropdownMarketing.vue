@@ -65,7 +65,6 @@ export default {
         this.thereAreSubs = true;
         this.holdTheDoor = true;
       } else {
-        console.log("entra al else");
         this.selectedCat = event.target.innerText;
         this.selectedSubCat = "";
         document

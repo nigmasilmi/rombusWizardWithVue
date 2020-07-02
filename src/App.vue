@@ -138,7 +138,7 @@ body {
 .stepTitle {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
-  font-size: 19px;
+  font-size: 13px;
   line-height: 36px;
   color: #07a0c0;
   text-transform: uppercase;

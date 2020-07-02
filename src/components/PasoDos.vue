@@ -75,6 +75,10 @@
           >Si lo deseas, puedes agregar hasta 5 habilidades que consideres
           necesarias.</label
         ><br />
+        <div v-if="limitMessage" class="errors">
+          Has llegado al límite de habilidades permitidas, puedes agregar hasta
+          5
+        </div>
         <input
           type="text"
           name=""
@@ -85,8 +89,8 @@
         <button type="submit" @click.prevent="addSkill">Agregar+</button>
       </form>
       <div class="skillsBullets">
-        <ul v-for="skill in skillsAdded" :key="skill.id">
-          <span @click="notReally(skill.id)" class="deleteSkill">x</span>
+        <ul v-for="(skill, key) in skillsAdded" :key="skill.id">
+          <span @click="notReally(key)" class="deleteSkill">x</span>
           <li :class="skillsColor">{{ skill.name }}</li>
         </ul>
       </div>
@@ -124,10 +128,11 @@ export default {
       showCodeBool: false,
       skillInput: "",
       skillsAdded: [],
-      indexGenerator: 0,
+      indexGenerator: 1,
       categoria: null,
       subcategoria: null,
-      area: null
+      area: null,
+      limitMessage: false
     };
   },
   computed: {
@@ -167,13 +172,27 @@ export default {
         (this.showCampaignBool = false);
     },
     addSkill: function() {
-      this.skillsAdded.push({ id: this.indexGenerator, name: this.skillInput });
-      this.skillInput = "";
-      this.indexGenerator++;
+      if (this.skillsAdded.length < 5) {
+        this.limitMessage = false;
+        this.skillsAdded.push({
+          id: this.indexGenerator,
+          name: this.skillInput
+        });
+        this.skillInput = "";
+        this.indexGenerator++;
+      } else {
+        this.limitMessage = true;
+      }
     },
-    notReally: function(index) {
-      this.skillsAdded.splice(index, 1);
+    notReally: function(key) {
+      let keyHere = key;
+      this.skillsAdded.forEach((element, index) => {
+        if (element.id == keyHere) {
+          return this.skillsAdded.splice(index, 1);
+        }
+      });
     },
+
     addCatSubCatAndArea: function(selectedCat, selectedSubCat, selectedArea) {
       console.log("se lo trae", selectedCat, selectedSubCat);
       this.categoria = selectedCat;

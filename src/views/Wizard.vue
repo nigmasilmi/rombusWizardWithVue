@@ -57,7 +57,7 @@
       ></paso-dos>
     </div>
     <div v-if="stepThree">
-      <paso-tres></paso-tres>
+      <paso-tres :stepsFromParent="this.steps"></paso-tres>
     </div>
   </div>
 </template>
@@ -130,10 +130,6 @@ export default {
       event.preventDefault();
     },
     addProperties: function(skillsArr, catego, subcatego, area) {
-      console.log("skillsArr", skillsArr);
-      console.log("catego", catego);
-      console.log("subcatego", subcatego);
-      console.log("area", area);
       this.proyectoEnCreacion.habilidades = skillsArr;
       this.proyectoEnCreacion.categoria = catego;
       this.proyectoEnCreacion.subcategoria = subcatego;
