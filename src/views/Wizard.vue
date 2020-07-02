@@ -12,6 +12,14 @@
           un plan a tu medida!
         </p>
         <form class="content">
+          <div class="errors">
+            <p v-if="errors.length">
+            <b class="errors">Por favor corrija los siguientes errores:</b>
+             <ul>
+                <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
+              </ul>
+            </p>
+         </div>
           <label class="indOverBoxForm" for="tituloInFormId"
             >Ponle un título fácil, que indique tu requerimiento *</label
           >
@@ -36,7 +44,7 @@
             aria-placeholder="Descripción del proyecto"
           ></textarea>
         </form>
-        <div class="continueBtn" @click="goToStep2">continuar</div>
+        <div class="continueBtn" @click="checkForm">continuar</div>
       </div>
     </div>
     <!-- importar componentes acá -->
@@ -56,8 +64,9 @@ export default {
     return {
       stepOne: true,
       stepTwo: false,
-      tituloProyectoIn: "",
-      descriptProyectoIn: "",
+      tituloProyectoIn: null,
+      descriptProyectoIn: null,
+      errors: [],
       steps: [
         { number: "1/4", name: "definición" },
         { number: "2/4", name: "especialidad" },
@@ -76,10 +85,26 @@ export default {
     };
   },
   methods: {
-    goToStep2: function() {
-      this.stepOne = false;
-      this.stepTwo = true;
-    }
+   
+    checkForm: function(event){
+      if(this.tituloProyectoIn && this.descriptProyectoIn){
+        this.stepOne = false;
+        this.stepTwo = true;
+        return true
+      } this.errors = [];
+
+      if (!this.tituloProyectoIn) {
+        this.errors.push('Se requiere un título para el proyecto');
+      }
+      if (!this.descriptProyectoIn) {
+        this.errors.push('Tu visión del proyecto es importante, por favor rellena el campo "descripción"');
+      }
+
+      event.preventDefault();
+
+      }
+
+    
   },
   components: {
     PasoDos

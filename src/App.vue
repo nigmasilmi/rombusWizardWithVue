@@ -17,8 +17,7 @@ export default {
     return {
       user: null,
       proyectosTodos: [],
-      proyecto: null,
-      areaOwnColor: "black"
+      proyecto: null
     };
   },
   mounted() {
@@ -356,6 +355,16 @@ p .subTextInterPpal {
   margin-top: -3%;
 }
 
+.errors {
+  font-family: var(--font-family);
+  font-size: 16px;
+  color: var(--coding-color);
+}
+
+.errors ul li {
+  list-style: none;
+}
+
 /* COMMON ASSETS */
 .continueBtn {
   font-family: "Open Sans", sans-serif;
@@ -570,5 +579,6 @@ p .subTextInterPpal {
   font-family: "Open Sans", sans-serif;
   font-weight: 200;
   line-height: 1em;
+  cursor: pointer;
 }
 </style>

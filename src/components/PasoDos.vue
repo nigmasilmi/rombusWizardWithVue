@@ -72,19 +72,19 @@
           >Si lo deseas, puedes agregar hasta 5 habilidades que consideres
           necesarias.</label
         ><br />
-        <input type="text" name="" id="extraSkills" autocomplete="true" />
-        <button type="submit">Agregar+</button>
+        <input
+          type="text"
+          name=""
+          id="extraSkills"
+          autocomplete="true"
+          v-model="skillInput"
+        />
+        <button type="submit" @click.prevent="addSkill">Agregar+</button>
       </form>
       <div class="skillsBullets">
-        <ul>
-          <span class="deleteSkill">x</span>
-          <li :class="skillsColor">Diseño de Interfaz de Usuario</li>
-          <span class="deleteSkill">x</span>
-          <li :class="skillsColor">Ilustración</li>
-          <span class="deleteSkill">x</span>
-          <li :class="skillsColor">Adobe Photoshop</li>
-          <span class="deleteSkill">x</span>
-          <li :class="skillsColor">Adobe After Effects</li>
+        <ul v-for="skill in skillsAdded" :key="skill.id">
+          <span @click="notReally(skill.id)" class="deleteSkill">x</span>
+          <li :class="skillsColor">{{ skill.name }}</li>
         </ul>
       </div>
       <div class="continueBtn">continuar</div>
@@ -113,7 +113,10 @@ export default {
       showMarketingBool: false,
       showDesignBool: false,
       showCampaignBool: false,
-      showCodeBool: false
+      showCodeBool: false,
+      skillInput: "",
+      skillsAdded: [],
+      indexGenerator: 0
     };
   },
   computed: {
@@ -151,6 +154,14 @@ export default {
       (this.showDesignBool = false),
         (this.showMarketingBool = false),
         (this.showCampaignBool = false);
+    },
+    addSkill: function() {
+      this.skillsAdded.push({ id: this.indexGenerator, name: this.skillInput });
+      this.skillInput = "";
+      this.indexGenerator++;
+    },
+    notReally: function(index) {
+      this.skillsAdded.splice(index, 1);
     }
   }
 };
