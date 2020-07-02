@@ -57,7 +57,10 @@
         </div>
       </div>
     </div>
-    <eym-drop v-if="showMarketingBool"></eym-drop>
+    <eym-drop
+      v-if="showMarketingBool"
+      @addCatFromDD="addCatSubCatAndArea"
+    ></eym-drop>
     <design-drop v-if="showDesignBool"></design-drop>
     <campaign-up v-if="showCampaignBool"></campaign-up>
     <code-up v-if="showCodeBool"></code-up>
@@ -87,7 +90,12 @@
           <li :class="skillsColor">{{ skill.name }}</li>
         </ul>
       </div>
-      <div class="continueBtn">continuar</div>
+      <div
+        class="continueBtn"
+        @click="$emit('passData', skillsAdded, categoria, subcategoria, area)"
+      >
+        continuar
+      </div>
     </div>
   </div>
 </template>
@@ -116,7 +124,10 @@ export default {
       showCodeBool: false,
       skillInput: "",
       skillsAdded: [],
-      indexGenerator: 0
+      indexGenerator: 0,
+      categoria: null,
+      subcategoria: null,
+      area: null
     };
   },
   computed: {
@@ -162,6 +173,12 @@ export default {
     },
     notReally: function(index) {
       this.skillsAdded.splice(index, 1);
+    },
+    addCatSubCatAndArea: function(selectedCat, selectedSubCat, selectedArea) {
+      console.log("se lo trae", selectedCat, selectedSubCat);
+      this.categoria = selectedCat;
+      this.subcategoria = selectedSubCat;
+      this.area = selectedArea;
     }
   }
 };

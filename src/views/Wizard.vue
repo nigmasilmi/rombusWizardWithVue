@@ -13,13 +13,15 @@
         </p>
         <form class="content">
           <div class="errors">
-            <p v-if="errors.length">
-            <b class="errors">Por favor corrija los siguientes errores:</b>
-             <ul>
-                <li v-for="(error, index) in errors" :key="index">{{ error }}</li>
+            <div v-if="errors.length">
+              <b class="errors">Por favor corrije los siguientes errores:</b>
+              <ul>
+                <li v-for="(error, index) in errors" :key="index">
+                  {{ error }}
+                </li>
               </ul>
-            </p>
-         </div>
+            </div>
+          </div>
           <label class="indOverBoxForm" for="tituloInFormId"
             >Ponle un título fácil, que indique tu requerimiento *</label
           >
@@ -49,65 +51,96 @@
     </div>
     <!-- importar componentes acá -->
     <div v-if="stepTwo">
-      <paso-dos :stepsFromParent="this.steps"></paso-dos>
+      <paso-dos
+        :stepsFromParent="this.steps"
+        @passData="addProperties"
+      ></paso-dos>
+    </div>
+    <div v-if="stepThree">
+      <paso-tres></paso-tres>
     </div>
   </div>
 </template>
 <script>
 import PasoDos from "@/components/PasoDos.vue";
+import PasoTres from "@/components/PasoTres.vue";
 export default {
   name: "wizard",
-  componenmts: {
-    PasoDos
+  components: {
+    PasoDos,
+    PasoTres
   },
   data: function() {
     return {
       stepOne: true,
       stepTwo: false,
+      stepThree: false,
       tituloProyectoIn: null,
       descriptProyectoIn: null,
+      categoriaIn: null,
+
       errors: [],
       steps: [
         { number: "1/4", name: "definición" },
         { number: "2/4", name: "especialidad" },
         { number: "3/4", name: "datos adicionales" },
         { number: "4/4", name: "tipo de prestación" }
-      ],
-      currentProy: {
+      ]
+    };
+  },
+  computed: {
+    proyectoEnCreacion: function() {
+      return {
         area: "",
         categoria: "",
         ciudad: "",
         cliente: "",
         comentarios: "",
-        titulo: this.titulo,
-        descripcion: this.tituloProyectoIn
-      }
-    };
+        descripcion: this.descriptProyectoIn,
+        email_cliente: "",
+        habilidades: [],
+        imgUrl: "",
+        modoAtn: "",
+        pais: "",
+        presupuesto: 0,
+        subcategoria: "",
+        telefono_cliente: "",
+        titulo: this.tituloProyectoIn
+      };
+    }
   },
   methods: {
-   
-    checkForm: function(event){
-      if(this.tituloProyectoIn && this.descriptProyectoIn){
+    checkForm: function(event) {
+      if (this.tituloProyectoIn && this.descriptProyectoIn) {
         this.stepOne = false;
         this.stepTwo = true;
-        return true
-      } this.errors = [];
+        return true;
+      }
+      this.errors = [];
 
       if (!this.tituloProyectoIn) {
-        this.errors.push('Se requiere un título para el proyecto');
+        this.errors.push("Se requiere un título para el proyecto");
       }
       if (!this.descriptProyectoIn) {
-        this.errors.push('Tu visión del proyecto es importante, por favor rellena el campo "descripción"');
+        this.errors.push(
+          'Tu visión del proyecto es importante, por favor rellena el campo "descripción"'
+        );
       }
 
       event.preventDefault();
-
-      }
-
-    
-  },
-  components: {
-    PasoDos
+    },
+    addProperties: function(skillsArr, catego, subcatego, area) {
+      console.log("skillsArr", skillsArr);
+      console.log("catego", catego);
+      console.log("subcatego", subcatego);
+      console.log("area", area);
+      this.proyectoEnCreacion.habilidades = skillsArr;
+      this.proyectoEnCreacion.categoria = catego;
+      this.proyectoEnCreacion.subcategoria = subcatego;
+      this.proyectoEnCreacion.area = area;
+      this.stepTwo = false;
+      this.stepThree = true;
+    }
   }
 };
 </script>

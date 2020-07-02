@@ -17,7 +17,7 @@ export default {
     return {
       user: null,
       proyectosTodos: [],
-      proyecto: null
+      proyectoTestFromFirebase: null
     };
   },
   mounted() {
@@ -25,7 +25,7 @@ export default {
       .doc("GlM047LzsIA5VfSOW2Ft")
       .get()
       .then(snapshot => {
-        this.proyecto = snapshot.data().titulo;
+        this.proyectoTestFromFirebase = snapshot.data().titulo;
       });
     db.collection("proyectos")
       .get()
