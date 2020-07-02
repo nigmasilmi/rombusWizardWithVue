@@ -17,7 +17,8 @@ export default {
     return {
       user: null,
       proyectosTodos: [],
-      proyecto: null
+      proyecto: null,
+      areaOwnColor: "black"
     };
   },
   mounted() {
@@ -55,6 +56,17 @@ purplish-grey ::: rgb(87 85 89) #575559
 almost-black ::: rgb(10 17 26) #0a111a
 
 */
+
+/* VARIABLES */
+
+:root {
+  --font-family: "Open Sans", sans-serif;
+
+  --marketing-color: #d01d00;
+  --design-color: #fcb040;
+  --campaign-color: #0e76bc;
+  --coding-color: #9f1f63;
+}
 
 /* FONTS RULES */
 
@@ -136,7 +148,7 @@ body {
 .autoCompleteInstructions {
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 12px;
   line-height: 34px;
   color: #0a111a;
 }
@@ -386,11 +398,28 @@ p .subTextInterPpal {
   line-height: 28px;
   text-align: center;
   cursor: pointer;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
 }
-.brightMe {
+.brightMeMkt {
   background-color: #d01d00 !important;
   color: #fff !important;
 }
+
+.brightMeDesign {
+  background-color: #fcb040 !important;
+  color: #fff !important;
+}
+
+.brightMeCampaign {
+  background-color: #0e76bc !important;
+  color: #fff !important;
+}
+
+.brightMeCode {
+  background-color: #9f1f63 !important;
+  color: #fff !important;
+}
+
 .areaIconText {
   font-size: 12px;
   line-height: 16px;
@@ -413,6 +442,7 @@ p .subTextInterPpal {
   background-color: #fff;
   padding-bottom: 2%;
   margin-left: 32.6%;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
 }
 .ddWrapper ul {
   margin-left: -3%;
@@ -435,16 +465,110 @@ p .subTextInterPpal {
   background-color: #d01d00;
   color: #fff;
 }
+.onItDaddy {
+  background-color: #d01d00;
+  color: #fff;
+}
 
 .leaving {
   background-color: #fff;
   color: #575559;
 }
 
-.subCatClass{
+.subCatClass {
   position: absolute;
   bottom: -2%;
   left: 32%;
+}
 
+/* ADDITIONAL SKILLS */
+
+.skillsAddFormWrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 32%;
+  padding-bottom: 12%;
+}
+
+.skillsForm input[type="text"] {
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+  border: 0;
+  height: 2.5em;
+  width: 24em;
+}
+.skillsForm button[type="submit"] {
+  border: solid 1px #d2d2d1;
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+  background-color: #666666;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.95px;
+  margin-left: 4px;
+  height: 3em;
+}
+.skillsBullets {
+  display: flex;
+}
+
+.skillsBullets ul {
+  display: flex;
+  margin-left: -3.2em;
+}
+
+.skillsBullets ul li {
+  flex-wrap: nowrap;
+  padding: 1em;
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.876);
+  font-size: 10px;
+  -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+}
+.skillsBullets4Mkt {
+  flex-wrap: nowrap;
+  padding: 1em;
+  list-style: none;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.876);
+  font-size: 10px;
+  -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+  background-color: var(--marketing-color);
+}
+
+.skillsBullets4Des {
+  background-color: var(--design-color);
+}
+
+.skillsBullets4Camp {
+  background-color: var(--campaign-color);
+}
+
+.skillsBullets4Code {
+  background-color: var(--coding-color);
+}
+.deleteSkill {
+  color: #666;
+  background-color: #fff;
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  z-index: 2;
+  position: relative;
+  top: -0.5em;
+  left: 0.7em;
+  border: solid 1px #c4c4c3;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 200;
+  line-height: 1em;
 }
 </style>

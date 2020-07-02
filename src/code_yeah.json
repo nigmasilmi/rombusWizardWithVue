@@ -1,0 +1,66 @@
+[
+    {   "id": 1,
+        "name":"Interfaz de Usuario - Diseño UI / Front-end",
+         "subcategories":"null"
+
+    },
+    {   
+        "id": 2,
+        "name":"Programación Web",
+        "subcategories":["Website", "Landing Page", "Blog", "Mail", "Arreglo de Website (bug)", "Otro"]
+    },
+    {
+        "id": 3,
+        "name":"Plataforma de Gestión de Contenidos (CMS)",
+        "subcategories":"null"
+
+    },
+    {
+        "id": 4,
+        "name":"Desarrollo de Aplicaciones",
+         "subcategories":"null"
+    },
+    {
+        "id": 5,
+        "name":"Integración con API's",
+         "subcategories":"null"
+    },
+    {
+        "id": 6,
+        "name":"Comercio Electrónico",
+         "subcategories":"null"
+    },
+    {
+        "id": 7,
+        "name":"Juegos",
+         "subcategories":"null"
+    },
+    {
+        "id": 8,
+        "name":"Control de Calidad",
+         "subcategories":"null"
+    },
+    {
+        "id": 9,
+        "name":"Sistemas",
+         "subcategories":"null"
+    },{
+        "id": 10,
+        "name":"Redes",
+         "subcategories":"null"
+    },{
+        "id": 11,
+        "name":"Seguridad Informática",
+         "subcategories":"null"
+    },{
+        "id": 12,
+        "name":"Inteligencia de Negocios / BI (Business Intelligence)",
+         "subcategories":"null"
+    },
+    {
+        "id": 13,
+        "name":"Soporte",
+         "subcategories":"null"
+    }
+    
+]

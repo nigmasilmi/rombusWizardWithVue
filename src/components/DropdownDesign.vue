@@ -23,16 +23,23 @@
   </div>
 </template>
 <script>
-import MarketingCategorias from "../estrat_mark.json";
+import DesignCategorias from "../dis_crea.json";
 export default {
-  name: "EymDrop",
+  name: "DesignDrop",
   data: function() {
     return {
-      categorias: MarketingCategorias,
+      categorias: DesignCategorias,
       thereAreSubs: false,
       subcategorias: [],
       holdTheDoor: false
     };
+  },
+  computed: {
+    stylesRuleHere() {
+      return {
+        myOwnColor: "fcb040"
+      };
+    }
   },
 
   methods: {
@@ -73,6 +80,6 @@ export default {
 <style scoped>
 .skillsBullets ul li,
 .onIt {
-  background-color: var(--marketing-color);
+  background-color: var(--design-color);
 }
 </style>

@@ -14,7 +14,7 @@
           <ul class="areasBtnList">
             <li
               @click="showMarketingDD()"
-              :class="{ brightMe: showMarketingBool }"
+              :class="{ brightMeMkt: showMarketingBool }"
             >
               <div class="awIcon">
                 <font-awesome-icon icon="binoculars"></font-awesome-icon>
@@ -23,7 +23,10 @@
                 Estrategia y Marketing
               </div>
             </li>
-            <li>
+            <li
+              @click="showDesign()"
+              :class="{ brightMeDesign: showDesignBool }"
+            >
               <div class="awIcon">
                 <font-awesome-icon icon="eye"></font-awesome-icon>
               </div>
@@ -31,7 +34,10 @@
                 Diseño y Creatividad
               </div>
             </li>
-            <li>
+            <li
+              @click="showCampaign()"
+              :class="{ brightMeCampaign: showCampaignBool }"
+            >
               <div class="awIcon">
                 <font-awesome-icon icon="thumbs-up"></font-awesome-icon>
               </div>
@@ -39,7 +45,7 @@
                 Publicidad y Campañas
               </div>
             </li>
-            <li>
+            <li @click="showCode()" :class="{ brightMeCode: showCodeBool }">
               <div class="awIcon">
                 <font-awesome-icon icon="code"></font-awesome-icon>
               </div>
@@ -52,27 +58,99 @@
       </div>
     </div>
     <eym-drop v-if="showMarketingBool"></eym-drop>
+    <design-drop v-if="showDesignBool"></design-drop>
+    <campaign-up v-if="showCampaignBool"></campaign-up>
+    <code-up v-if="showCodeBool"></code-up>
+    <div
+      class="skillsAddFormWrapper"
+      v-if="
+        showMarketingBool || showDesignBool || showCampaignBool || showCodeBool
+      "
+    >
+      <form class="skillsForm">
+        <label class="autoCompleteInstructions" for="extraSkills"
+          >Si lo deseas, puedes agregar hasta 5 habilidades que consideres
+          necesarias.</label
+        ><br />
+        <input type="text" name="" id="extraSkills" autocomplete="true" />
+        <button type="submit">Agregar+</button>
+      </form>
+      <div class="skillsBullets">
+        <ul>
+          <span class="deleteSkill">x</span>
+          <li :class="skillsColor">Diseño de Interfaz de Usuario</li>
+          <span class="deleteSkill">x</span>
+          <li :class="skillsColor">Ilustración</li>
+          <span class="deleteSkill">x</span>
+          <li :class="skillsColor">Adobe Photoshop</li>
+          <span class="deleteSkill">x</span>
+          <li :class="skillsColor">Adobe After Effects</li>
+        </ul>
+      </div>
+      <div class="continueBtn">continuar</div>
+    </div>
   </div>
 </template>
 
 <script>
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import EymDrop from "./DropdownMarketing";
+import DesignDrop from "./DropdownDesign";
+import CampaignUp from "./DropdownCampaign";
+import CodeUp from "./DropdownCode";
+
 export default {
   name: "PasoDos",
   components: {
     FontAwesomeIcon,
-    EymDrop
+    EymDrop,
+    DesignDrop,
+    CampaignUp,
+    CodeUp
   },
   data: function() {
     return {
-      showMarketingBool: false
+      showMarketingBool: false,
+      showDesignBool: false,
+      showCampaignBool: false,
+      showCodeBool: false
     };
+  },
+  computed: {
+    skillsColor() {
+      return {
+        skillsBullets4Mkt: this.showMarketingBool,
+        skillsBullets4Des: this.showDesignBool,
+        skillsBullets4Camp: this.showCampaignBool,
+        skillsBullets4Code: this.showCodeBool
+      };
+    }
   },
   props: ["stepsFromParent"],
   methods: {
     showMarketingDD: function() {
       this.showMarketingBool = !this.showMarketingBool;
+      (this.showDesignBool = false),
+        (this.showCampaignBool = false),
+        (this.showCodeBool = false);
+    },
+    showDesign: function() {
+      this.showDesignBool = !this.showDesignBool;
+      (this.showMarketingBool = false),
+        (this.showCampaignBool = false),
+        (this.showCodeBool = false);
+    },
+    showCampaign: function() {
+      this.showCampaignBool = !this.showCampaignBool;
+      (this.showDesignBool = false),
+        (this.showMarketingBool = false),
+        (this.showCodeBool = false);
+    },
+    showCode: function() {
+      this.showCodeBool = !this.showCodeBool;
+      (this.showDesignBool = false),
+        (this.showMarketingBool = false),
+        (this.showCampaignBool = false);
     }
   }
 };

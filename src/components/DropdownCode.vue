@@ -22,19 +22,19 @@
     </div>
   </div>
 </template>
+
 <script>
-import MarketingCategorias from "../estrat_mark.json";
+import CodeCategorias from "../code_yeah.json";
 export default {
-  name: "EymDrop",
+  name: "CodeUp",
   data: function() {
     return {
-      categorias: MarketingCategorias,
+      categorias: CodeCategorias,
       thereAreSubs: false,
       subcategorias: [],
       holdTheDoor: false
     };
   },
-
   methods: {
     highlightMe: function(event, index) {
       event.target.setAttribute("class", "onIt");
@@ -73,6 +73,6 @@ export default {
 <style scoped>
 .skillsBullets ul li,
 .onIt {
-  background-color: var(--marketing-color);
+  background-color: var(--coding-color);
 }
 </style>

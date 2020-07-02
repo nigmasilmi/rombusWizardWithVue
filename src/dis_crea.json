@@ -1,0 +1,75 @@
+[
+    {   "id": 1,
+        "name":"Creación de Marca e Identidad Corporativa",
+         "subcategories":"null"
+
+    },
+    {   
+        "id": 2,
+        "name":"Diseño Web",
+         "subcategories":"null"
+    },
+    {
+        "id": 3,
+        "name":"Diseño de Aplicación",
+        "subcategories":["Android", "IOS", "Desktop"]
+
+    },
+    {
+        "id": 4,
+        "name":"Diseño UX: Experiencia de Usuario",
+         "subcategories":"null"
+    },
+    {
+        "id": 5,
+        "name":"Diseño Gráfico",
+         "subcategories":"null"
+    },
+    {
+        "id": 6,
+        "name":"Diseño Editorial",
+         "subcategories":"null"
+    },
+    {
+        "id": 7,
+        "name":"Diseño Industrial",
+         "subcategories":"null"
+    },
+    {
+        "id": 8,
+        "name":"Diseño de Indumentaria y Moda",
+         "subcategories":"null"
+    },
+    {
+        "id": 9,
+        "name":"Redacción",
+         "subcategories":"null"
+    },{
+        "id": 10,
+        "name":"Traducción a Idiomas",
+         "subcategories":"null"
+    },{
+        "id": 11,
+        "name":"Fotografía",
+         "subcategories":"null"
+    },{
+        "id": 12,
+        "name":"Ilustraciones",
+         "subcategories":"null"
+    },
+    {
+        "id": 13,
+        "name":"Animaciones",
+         "subcategories":"null"
+    },
+    {   
+        "id": 14,
+        "name":"Video",
+         "subcategories":"null"
+    },
+    {   
+        "id": 15,
+        "name":"Audio y Sonido",
+         "subcategories":"null"
+    }
+]

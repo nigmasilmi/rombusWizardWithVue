@@ -23,12 +23,12 @@
   </div>
 </template>
 <script>
-import MarketingCategorias from "../estrat_mark.json";
+import CampaignCategorias from "../campaign.json";
 export default {
-  name: "EymDrop",
+  name: "CampaignUp",
   data: function() {
     return {
-      categorias: MarketingCategorias,
+      categorias: CampaignCategorias,
       thereAreSubs: false,
       subcategorias: [],
       holdTheDoor: false
@@ -73,6 +73,6 @@ export default {
 <style scoped>
 .skillsBullets ul li,
 .onIt {
-  background-color: var(--marketing-color);
+  background-color: var(--campaign-color);
 }
 </style>

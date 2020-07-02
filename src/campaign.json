@@ -1,0 +1,48 @@
+[
+    {   "id": 1,
+        "name":"Creatividad Publicitaria",
+         "subcategories":"null"
+
+    },
+    {   
+        "id": 2,
+        "name":"Planificación de Medios",
+         "subcategories":"null"
+    },
+    {
+        "id": 3,
+        "name":"Publicidad Digital",
+        "subcategories":"null"
+
+    },
+    {
+        "id": 4,
+        "name":"Gestión de Campaña Publicitaria",
+        "subcategories":["Pay Per Click(PPC)", "Otra"]
+    },
+    {
+        "id": 5,
+        "name":"Publicidad en Redes Sociales (Social Ads)",
+         "subcategories":"null"
+    },
+    {
+        "id": 6,
+        "name":"Publicidad BTL",
+         "subcategories":"null"
+    },
+    {
+        "id": 7,
+        "name":"Eventos",
+         "subcategories":"null"
+    },
+    {
+        "id": 8,
+        "name":"Prensa",
+         "subcategories":"null"
+    },
+    {
+        "id": 9,
+        "name":"Estrategia multiformato 360",
+         "subcategories":"null"
+    }
+]
